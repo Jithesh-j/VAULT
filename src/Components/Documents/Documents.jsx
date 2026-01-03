@@ -15,7 +15,7 @@ function Documents({ user }) {
     const fetchDocuments = async () => {
         try {
             // Adjust this URL if your GET endpoint is different
-            const response = await axios.get("http://localhost:8080/getdocuments");
+            const response = await axios.get(`http://localhost:8080/getdocuments/${user.tenantId}`);
             setDocuments(response.data);
         } catch (error) {
             console.error("Error fetching documents:", error);
