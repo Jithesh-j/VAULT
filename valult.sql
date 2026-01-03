@@ -15,3 +15,5 @@ INSERT INTO tenants (id, name) VALUES ('NIKE', 'Nike Inc'), ('ADIDAS', 'Adidas A
 INSERT INTO users (email, password, tenant_id) VALUES 
 ('alice@nike.com', '123456', 'NIKE'),
 ('bob@adidas.com', '654321', 'ADIDAS');
+
+CREATE TABLE

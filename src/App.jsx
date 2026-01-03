@@ -1,23 +1,20 @@
-// src/App.jsx
 import { useState } from "react";
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 
 import Loginpage from "./Components/login/loginpage";
-import Dashboard from "./Components/Homepage/Homepage";
+import Homepage from "./Components/Homepage/Homepage";
 
-// Simple Components for demo
-const Documents = () => <h2>📂 Documents List</h2>;
-const Chat = () => <h2>💬 AI Chat Interface</h2>;
-const Settings = () => <h2>⚙️ User Settings</h2>;
+import Documents from "./Components/Documents/Documents";
+import Chat from "./Components/AIChat/AIChat";
+import Settings from "./Components/Settings/Settings";
 
 function App() {
   const [user, setUser] = useState(null);
-  const navigate = useNavigate(); // Hook to move pages programmatically
+  const navigate = useNavigate();
 
-  // Helper to handle login and move to dashboard
   const handleLogin = (userData) => {
     setUser(userData);
-    navigate('/docs'); // Auto-redirect to docs after login
+    navigate('/docs');
   };
 
   const handleLogout = () => {
@@ -27,29 +24,24 @@ function App() {
 
   return (
     <Routes>
-      
-      {/* 1. PUBLIC ROUTE: Login */}
-      <Route path="/login" element={
-        !user ? <Loginpage onLoginSuccess={handleLogin} /> : <Navigate to="/docs" />
-      } />
 
-      {/* 2. PROTECTED ROUTES: Dashboard Layout */}
-      {/* The Dashboard acts as a Wrapper around these children */}
+      {/* PUBLIC */}
+      <Route
+        path="/login"
+        element={!user ? <Loginpage onLoginSuccess={handleLogin} /> : <Navigate to="/docs" />}
+      />
+
+      {/* PROTECTED LAYOUT */}
       {user && (
-        <Route path="/" element={<Dashboard user={user} onLogout={handleLogout} />}>
-            
-            {/* These render INSIDE the <Outlet /> of Dashboard */}
-            <Route path="docs" element={<Documents />} />
-            <Route path="chat" element={<Chat />} />
-            <Route path="settings" element={<Settings />} />
-
-            {/* Default redirect: If they go to localhost:5173/, send to docs */}
-            <Route index element={<Navigate to="docs" />} />
-            
+        <Route path="/" element={<Homepage user={user} onLogout={handleLogout} />}>
+          <Route index element={<Navigate to="docs" />} />
+          <Route path="docs" element={<Documents user={user} />} />
+          <Route path="chat" element={<Chat />} />
+          <Route path="settings" element={<Settings />} />
         </Route>
       )}
 
-      {/* 3. CATCH ALL: If not logged in, force to login */}
+      {/* FALLBACK */}
       <Route path="*" element={<Navigate to="/login" />} />
 
     </Routes>
