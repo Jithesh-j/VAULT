@@ -2,8 +2,8 @@
 import { useState } from "react";
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 
-import Loginpage from "./login/Loginpage";
-import Dashboard from "./Homepage/Homepage";
+import Loginpage from "./Components/login/loginpage";
+import Dashboard from "./Components/Homepage/Homepage";
 
 // Simple Components for demo
 const Documents = () => <h2>📂 Documents List</h2>;
