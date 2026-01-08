@@ -10,10 +10,19 @@ CREATE TABLE users (
     tenant_id TEXT NOT NULL REFERENCES tenants(id)
 );
 
+CREATE TABLE documents (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    type VARCHAR(255),
+    size BIGINT,
+    tenant_id VARCHAR(255),
+    data bytea
+);
+
 INSERT INTO tenants (id, name) VALUES ('NIKE', 'Nike Inc'), ('ADIDAS', 'Adidas AG');
 
 INSERT INTO users (email, password, tenant_id) VALUES 
 ('alice@nike.com', '123456', 'NIKE'),
 ('bob@adidas.com', '654321', 'ADIDAS');
 
-CREATE TABLE
+INSERT INTO tenants (id, name) VALUES ('SKETCHERS', 'SKERS Inc');
