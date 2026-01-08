@@ -36,7 +36,7 @@ function App() {
         <Route path="/" element={<Homepage user={user} onLogout={handleLogout} />}>
           <Route index element={<Navigate to="docs" />} />
           <Route path="docs" element={<Documents user={user} />} />
-          <Route path="chat" element={<Chat />} />
+          <Route path="chat" element={<Chat user={user}/>} />
           <Route path="settings" element={<Settings />} />
         </Route>
       )}
