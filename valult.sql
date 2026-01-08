@@ -26,3 +26,16 @@ INSERT INTO users (email, password, tenant_id) VALUES
 ('bob@adidas.com', '654321', 'ADIDAS');
 
 INSERT INTO tenants (id, name) VALUES ('SKETCHERS', 'SKERS Inc');
+
+
+-- VECTOR EMBEDDINGS QUERIES ------
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS vectorstore (
+	id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
+	content text,
+	metadata json,
+	embedding vector(1536) -- 1536 is the standard dimension for OpenAI models
+);
+
+CREATE INDEX ON vectorstore USING HNSW (embedding vector_cosine_ops);
