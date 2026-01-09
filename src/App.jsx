@@ -37,7 +37,7 @@ function App() {
           <Route index element={<Navigate to="docs" />} />
           <Route path="docs" element={<Documents user={user} />} />
           <Route path="chat" element={<Chat user={user}/>} />
-          <Route path="settings" element={<Settings />} />
+          <Route path="settings" element={<Settings user={user}/>} />
         </Route>
       )}
 

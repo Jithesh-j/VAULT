@@ -13,7 +13,7 @@ function Loginpage({ onLoginSuccess }) {
 
     // 1. Fetch Organizations on Page Load
     useEffect(() => {
-        const fetchTenants = async () => {
+        const fetchTenants = async () => { 
             try {
                 const response = await axios.get("http://localhost:8080/tenantdetails");
                 setTenants(response.data);
@@ -48,7 +48,8 @@ function Loginpage({ onLoginSuccess }) {
                 console.log("Logged In....")
                 const userObject = {
                     email: email,
-                    tenantId: selectedTenant 
+                    tenantId: selectedTenant,
+                
                 };
                 onLoginSuccess(userObject);
                
