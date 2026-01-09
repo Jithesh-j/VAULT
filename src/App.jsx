@@ -28,7 +28,7 @@ function App() {
       {/* PUBLIC */}
       <Route
         path="/login"
-        element={!user ? <Loginpage onLoginSuccess={handleLogin} /> : <Navigate to="/docs" />}
+        element={!user ? <Loginpage onLoginSuccess={handleLogin} /> : <Navigate to="/chat" />}
       />
 
       {/* PROTECTED LAYOUT */}
