@@ -1,0 +1,79 @@
+1. Basic Care Package
+
+    Description:
+
+	Gentle daily care solution
+
+	Helps keep skin clean and fresh
+
+	Suitable for beginners
+
+	No harsh chemicals
+
+    Price:
+
+      $14.99
+
+2. Standard Wellness Plan
+
+    Description:
+
+	Balanced routine for everyday use
+
+	Supports healthy skin texture
+
+	Ideal for normal to combination skin
+
+	Recommended by skincare experts
+
+    Price:
+
+	$24.99
+
+4. Advanced Protection Package
+
+   Description:
+
+	Targets deep impurities and oil control
+
+	Helps prevent breakouts
+
+	Strengthens skin barrier
+
+	Suitable for long-term use
+
+   Price:
+
+	$39.99
+
+5. Premium Glow Collection
+
+   Description:
+
+	Enhances natural glow
+
+	Deep nourishment formula
+
+	Improves skin tone over time
+
+	High-quality ingredients
+
+   Price:
+
+	$59.99
+
+6. Ultimate Luxury Experience
+
+   Description:
+
+	Complete professional-level care
+
+	Advanced active ingredients
+
+	Visible results in weeks
+
+	Designed for maximum effectiveness
+
+   Price:
+
+	$89.99
